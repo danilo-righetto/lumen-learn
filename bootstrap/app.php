@@ -23,9 +23,9 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -40,12 +40,12 @@ $app = new Laravel\Lumen\Application(
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    App\Exceptions\Handler::class
+    CodeAgenda\Exceptions\Handler::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    App\Console\Kernel::class
+    CodeAgenda\Console\Kernel::class
 );
 
 /*
@@ -60,11 +60,11 @@ $app->singleton(
 */
 
 // $app->middleware([
-//    App\Http\Middleware\ExampleMiddleware::class
+//    CodeAgenda\Http\Middleware\ExampleMiddleware::class
 // ]);
 
 // $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
+//     'auth' => CodeAgenda\Http\Middleware\Authenticate::class,
 // ]);
 
 /*
@@ -78,9 +78,9 @@ $app->singleton(
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
-// $app->register(App\Providers\EventServiceProvider::class);
+// $app->register(CodeAgenda\Providers\AppServiceProvider::class);
+// $app->register(CodeAgenda\Providers\AuthServiceProvider::class);
+// $app->register(CodeAgenda\Providers\EventServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ $app->singleton(
 |
 */
 
-$app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
+$app->group(['namespace' => 'CodeAgenda\Http\Controllers'], function ($app) {
     require __DIR__.'/../routes/web.php';
 });
 
