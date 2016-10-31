@@ -10,7 +10,11 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
+/*
 $app->get('/', function () use ($app) {
-    return $app->version();
+    return "Danilo Righetto - Lumen" ;
+    //$app->version();
 });
+*/
+
+$app->get('/', ['as'=> 'agenda.index','uses'=>'IndexController@index']);
