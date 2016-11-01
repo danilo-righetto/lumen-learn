@@ -11,9 +11,27 @@
 |
 */
 
+/*
 $factory->define(CodeAgenda\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
+    ];
+});
+*/
+
+$factory->define(\CodeAgenda\Entities\Pessoa::class, function($faker){
+    return [
+        'nome'=> $faker->name,
+        'apelido'=>$faker->firstname,
+        'sexo'=>$faker->randomElement(['F','M'])
+    ];
+});
+
+$factory->define(\CodeAgenda\Entities\Telefone::class, function($faker){
+    return [
+        'nome'=> $faker->name,
+        'apelido'=>$faker->firstname,
+        'sexo'=>$faker->randomElement(['F','M'])
     ];
 });
