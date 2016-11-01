@@ -20,6 +20,9 @@ $factory->define(CodeAgenda\User::class, function (Faker\Generator $faker) {
 });
 */
 
+/* Essa nossa classe vai criar dados aleatórios no nosso banco de dados para que possamos manipular na aplicação */
+
+/* Fabrica de Pessoas */
 $factory->define(\CodeAgenda\Entities\Pessoa::class, function($faker){
     return [
         'nome'=> $faker->name,
@@ -28,10 +31,14 @@ $factory->define(\CodeAgenda\Entities\Pessoa::class, function($faker){
     ];
 });
 
+/* Fabrica de Telefones */
 $factory->define(\CodeAgenda\Entities\Telefone::class, function($faker){
     return [
-        'nome'=> $faker->name,
-        'apelido'=>$faker->firstname,
-        'sexo'=>$faker->randomElement(['F','M'])
-    ];
+        'descricao'=> $faker->randomElement(['Residencial','Comercial','Celular','Recados']),
+        'codepais'=>$faker->optional(0.7, 55)->numberBetween(1,197),
+        'ddd'=>$faker->numberBetween(11, 91),
+        'prefixo'=>$faker->randomNumber(4),
+        'sufixo'=>$faker->randomNumber(4),
+        'pessoa_id'=>$faker->numberBetween(1,30)
+        ];
 });

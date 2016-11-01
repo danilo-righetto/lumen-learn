@@ -1,5 +1,7 @@
 <?php
 
+//namespace CodeAgenda\database\seeds;
+
 use Illuminate\Database\Seeder;
 
 class PessoaTableSeeder extends Seeder
@@ -11,6 +13,8 @@ class PessoaTableSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        factory(\CodeAgenda\Entities\Pessoa::class, 30)->create();
     }
 }
+
+?>
