@@ -1,0 +1,14 @@
+{
+  "name": "CodeAgenda",
+  "description": "Agenda Telefonica",
+  "main": "",
+  "authors": [
+    "Danilo Righetto"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/danilo-righetto/lumen-learn",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}
