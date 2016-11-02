@@ -2,9 +2,11 @@
 
 namespace CodeAgenda\Providers;
 
-use Illuminate\Support\ServiceProvider;
+
 use CodeAgenda\Entities\Pessoa;
 use CodeAgenda\Entities\Telefone;
+use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+         $this->app->bind('Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse');
     }
 
     public function boot(){

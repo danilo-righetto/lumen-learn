@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d155c6ab2500571b99fd524b4cbab9e3",
-    "content-hash": "3bbee0eb882fba009d9886d9d7f4b79e",
+    "hash": "841e2f779f70caf4c23ef7325ef6fda3",
+    "content-hash": "8f3d983f21583fd4a5e7fca88414cc3e",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -447,6 +447,52 @@
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
             "time": "2016-09-26 20:36:27"
+        },
+        {
+            "name": "illuminate/cookie",
+            "version": "v5.3.16",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/cookie.git",
+                "reference": "3b3eaf3aa0625439fc6d8d3eaf64eea373fd5ba2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/cookie/zipball/3b3eaf3aa0625439fc6d8d3eaf64eea373fd5ba2",
+                "reference": "3b3eaf3aa0625439fc6d8d3eaf64eea373fd5ba2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.3.*",
+                "illuminate/support": "5.3.*",
+                "php": ">=5.6.4",
+                "symfony/http-foundation": "3.1.*",
+                "symfony/http-kernel": "3.1.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Cookie\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Cookie package.",
+            "homepage": "https://laravel.com",
+            "time": "2016-09-22 15:05:31"
         },
         {
             "name": "illuminate/database",
