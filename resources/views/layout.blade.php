@@ -27,11 +27,11 @@
                 <h1>Danilo Righetto<br /></h1>
                 <small><i class="glyphicon glyphicon-phone-alt"></i>&nbsp;&nbsp;Agenda telefonica</small>
                 <span clas="pull-right">
-                    <form class="form-inline" action="#" method="post">
+                    <form class="form-inline" action="{{route('agenda.busca')}}" method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Pesquisar contato...">
+                            <input type="text" name="busca" class="form-control" placeholder="Pesquisar contato...">
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
                             </span>
             </div>
             </form>
