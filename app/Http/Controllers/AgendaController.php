@@ -2,6 +2,8 @@
 
 namespace CodeAgenda\Http\Controllers;
 
+use CodeAgenda\Entities\Pessoa;
+
 class AgendaController extends Controller
 {
     /**
@@ -14,8 +16,10 @@ class AgendaController extends Controller
         //
     }
 
-    public function index(){
-        return view('agenda');
+    public function index($letra = "A"){
+        //$pessoas = Pessoa::all();
+        $pessoas = Pessoa::where('apelido', 'like', $letra.'%')->get();
+        return view('agenda', compact('pessoas'));
     }
 
     //

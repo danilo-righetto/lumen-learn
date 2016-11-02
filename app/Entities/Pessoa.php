@@ -14,4 +14,8 @@ class Pessoa extends Model
         'apelido',
         'sexo'
     ];
+
+    public function telefones(){
+        return $this->hasMany(Telefone::class);
+    }
 }
