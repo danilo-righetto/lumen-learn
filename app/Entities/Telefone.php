@@ -16,4 +16,8 @@ class Telefone extends Model
         'prefixo',
         'sufixo'
     ]; 
+
+    public function getNumeroAttribute(){
+        return "{$this->codepais} ({$this->ddd}) {$this->prefixo}-{$this->sufixo}";
+    }
 }
