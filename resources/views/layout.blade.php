@@ -8,8 +8,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Code Agenda</title>
 
-    <!-- Bootstrap -->
-    <link href="/css/app.css" rel="stylesheet">
+    <!-- Bootstrap - /css/app.css -->
+    <link href="{{url('css/app.css')}}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,7 +55,7 @@
     </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="{{url('js/script.js')}}"></script>
 </body>
 
 </html>

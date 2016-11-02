@@ -2,7 +2,9 @@
 
 namespace CodeAgenda\Entities;
 
+use CodeAgenda\Entities\Pessoa;
 use Illuminate\Database\Eloquent\Model;
+
 
 class Telefone extends Model
 {
@@ -19,5 +21,9 @@ class Telefone extends Model
 
     public function getNumeroAttribute(){
         return "{$this->codepais} ({$this->ddd}) {$this->prefixo}-{$this->sufixo}";
+    }
+
+    public function pessoa(){
+        return $this->belongsTo(Pessoa::class);
     }
 }

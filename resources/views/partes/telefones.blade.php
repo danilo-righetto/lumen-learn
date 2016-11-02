@@ -6,7 +6,7 @@
         <td>{{$telefone->numero}}</td>
         <!-- <td>{{$telefone->codepais}} ({{$telefone->ddd}}) {{$telefone->prefixo}}-{{$telefone->sufixo}}</td> -->
         <td>
-            <a href="{{route('telefone.destroy', ['id'=>$telefone->id])}}" class="text-danger" data-toggle="tooltip" data-placement="top" title="Apagar"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+            <a href="{{route('telefone.delete', ['id'=>$telefone->id])}}" class="text-danger" data-toggle="tooltip" data-placement="top" title="Apagar"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
         </td>
     </tr>
     @endforeach
