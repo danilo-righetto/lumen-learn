@@ -48,6 +48,8 @@ $app->singleton(
     CodeAgenda\Console\Kernel::class
 );
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -67,13 +69,24 @@ $app->singleton(
 //    CodeAgenda\Http\Middleware\ExampleMiddleware::class
 // ]);
 
+$app->bind(Illuminate\Session\SessionManager::class, function ($app) {
+    return new Illuminate\Session\SessionManager($app);
+});
+
  $app->middleware([
       Illuminate\Cookie\Middleware\EncryptCookies::class,
       Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
       Illuminate\Session\Middleware\StartSession::class,
-      Illuminate\View\Middleware\ShareErrorsFromSession::class,
+      // Illuminate\View\Middleware\ShareErrorsFromSession::class,
+    // Illuminate\Notifications\NotificationServiceProvider::class,
      // Laravel\Lumen\Http\Middleware\VerifyCsrfToken::class,
  ]);
+
+$app->singleton('cookie', function () use ($app) {
+    return $app->loadComponent('session', 'Illuminate\Cookie\CookieServiceProvider', 'cookie');
+});
+
+$app->bind('Illuminate\Contracts\Cookie\QueueingFactory', 'cookie');
 
 // $app->routeMiddleware([
 //     'auth' => CodeAgenda\Http\Middleware\Authenticate::class,
@@ -91,8 +104,8 @@ $app->singleton(
 */
 
 $app->register(CodeAgenda\Providers\AppServiceProvider::class);
-// $app->register(CodeAgenda\Providers\AuthServiceProvider::class);
-// $app->register(CodeAgenda\Providers\EventServiceProvider::class);
+//$app->register(CodeAgenda\Providers\AuthServiceProvider::class);
+//$app->register(CodeAgenda\Providers\EventServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

@@ -33,6 +33,9 @@ class PessoaController extends Controller
         if($validator->fails()){
             return redirect()->route('pessoa.create'->withErrors($validator)->withInput());            
         }
+
+       $request->session();
+
         Pessoa::create($request->all());
 
         $pessoas = Pessoa::where('nome', $request->get('nome'))->get();

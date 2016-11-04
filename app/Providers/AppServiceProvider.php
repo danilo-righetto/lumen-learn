@@ -10,6 +10,12 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+
+    public function boot(){
+        /* Compartilhando dados entre as views */
+        view()->share(['letras'=>$this->getLetras()]);
+    }
+
     /**
      * Register any application services.
      *
@@ -18,22 +24,28 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-         $this->app->bind('Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse');
-    }
-
-    public function boot(){
-        /* Compartilhando dados entre as views */
-        view()->share(['letras'=>$this->getLetras()]);
+        //$this->app->bind('QueueingFactory');
+        //$this->app->bind('AddQueuedCookiesToResponse');
     }
 
     protected function getLetras(){
+        /*
         $letras = [];
         foreach(Pessoa::all() as $pessoa){
             $letras[] = strtoupper(substr($pessoa->apelido,0,1));
         }
-        /* Ordena alfabeticamente as pessoas */
+        
         
         sort($letras);
         return array_unique($letras);
+        */
+
+        $pessoas = Pessoa::select('apelido')->orderBy('apelido')->get();
+         $letras = [];
+
+         foreach ($pessoas as $pessoa) {
+             $letras[] = strtoupper(substr($pessoa->apelido, 0, 1));
+         }
+         return array_count_values($letras);
     }
 }
